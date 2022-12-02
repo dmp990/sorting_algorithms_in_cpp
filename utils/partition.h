@@ -1,20 +1,23 @@
+#include "swap.h"
 
-long long int partition(long long int arr[], long long int left, long long int right)
+/*
+    The following function implements Lomuto partition scheme.
+    For more information, visit: https://en.wikipedia.org/wiki/Quicksort#Lomuto_partition_scheme
+*/
+
+long long int partition(long long int arr[], long long int low, long long int high)
 {
-    long long int temp1 = 0, temp2 = left + 1;
+    long long int pivot = arr[high];
 
-    for (long long int i = left + 1; i < right; i++)
+    int temp_pivot_index = low - 1;
+
+    for (long long int i = low; i <= high - 1; i++)
     {
-        if (arr[i] <= arr[left])
+        if (arr[i] <= pivot)
         {
-            temp1 = arr[i];
-            arr[i] = arr[temp2];
-            arr[temp2] = temp1;
-            temp2++;
+            swap(&arr[++temp_pivot_index], &arr[i]);
         }
     }
-    temp1 = arr[temp2 - 1];
-    arr[temp2 - 1] = arr[left];
-    arr[left] = temp1;
-    return temp2;
+    swap(&arr[++temp_pivot_index], &arr[high]);
+    return temp_pivot_index;
 }
