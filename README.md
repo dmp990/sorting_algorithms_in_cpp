@@ -18,3 +18,5 @@ Sorting algorithm is an algorithm that puts elements of an array into an order. 
 |Quick Sort|$\Omega$(n log (n))|$\Theta$(n log (n))|O(n<sup>2</sup>)|
 |Selection Sort|$\Omega$(n<sup>2</sup>)|$\Theta$(n<sup>2</sup>)|O(n<sup>2</sup>)|
 |Shell Sort|$\Omega$(n log (n))|$\Theta$(n log (n))|O(n<sup>2</sup>)|
+
+![Complexity Chart](http://frontend.turing.io/assets/images/lessons/sorting-algorithms/big-O.png)
